@@ -53,7 +53,7 @@ app.use('/api', webhookRoutes);
 app.use('/api', checkoutRoutes);
 app.use('/api', couponRoutes)
 app.use('/api', productRoutes)
-app.use("/api/auth", authRoutes);
+app.use("/api", authRoutes);
 
 
 const PORT = process.env.PORT || 3001;
