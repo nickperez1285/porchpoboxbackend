@@ -16,6 +16,12 @@ const connectDB = require("./config/db");
 dotenv.config();
 
 const app = express();
+
+
+app.use("/api", webhookRoutes);
+
+
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 //connect to mongodb
@@ -25,10 +31,17 @@ connectDB();
 
 
 
+// app.use(cors({
+//      origin: "http://localhost:3000",
+//   credentials: true
+// }));
+
+
 app.use(cors({
-     origin: "http://localhost:3000",
-  credentials: true
+  origin: "https://porchpoboxfrontend.vercel.app",
+  credentials: true,
 }));
+
 
 
 
